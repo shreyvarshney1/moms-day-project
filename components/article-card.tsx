@@ -1,49 +1,51 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Article } from "@/lib/data";
+import { Card, CardContent } from "@/components/ui/card"
 
 interface ArticleCardProps {
-  title: string;
-  excerpt: string;
-  slug: string;
-  category?: string;
-  featured?: boolean;
+  title: string
+  description: string
+  readingTime: number
+  category: string
+  imageUrl: string
+  slug: string
 }
 
 export default function ArticleCard({
   title,
-  excerpt,
-  slug,
+  description,
+  readingTime,
   category,
-  featured = false,
+  imageUrl,
+  slug
 }: ArticleCardProps) {
   return (
-    <article className={`flex flex-col ${featured ? "mb-12" : ""}`}>
-      <Link href={`/articles/${slug}`} className="group">
-        <div className="relative aspect-[4/3] bg-[#dce4e7] mb-4 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center text-[#949799]">
-            Image
-          </div>
+    <Card className="overflow-hidden rounded-none border-0">
+      <div className="flex flex-col md:flex-row">
+        <div className="relative bg-gray-200 md:w-2/5">
+          <Image
+            src={imageUrl || "/placeholder.svg"}
+            alt={title}
+            width={400}
+            height={400}
+            className="h-full w-full object-cover"
+          />
         </div>
-
-        {category && (
-          <div className="mb-2">
-            <span className="text-xs uppercase tracking-wider">{category}</span>
+        <CardContent className="flex flex-col justify-between p-6 md:w-3/5">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-medium text-gray-700">#{category}</span>
+              <span className="text-sm text-gray-500">{readingTime} minutes reading</span>
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
+            <p className="text-gray-600">{description}</p>
           </div>
-        )}
-
-        <h3
-          className={`font-medium ${
-            featured ? "text-xl mb-2" : "text-base mb-1"
-          }`}
-        >
-          {title}
-        </h3>
-
-        {featured && <p className="text-sm text-[#949799] mb-4">{excerpt}</p>}
-
-        <button className="bg-black text-white text-xs px-4 py-2 cursor-pointer">
-          Read More
-        </button>
-      </Link>
-    </article>
+          <button className="mt-6 bg-black hover:bg-gray-800 text-white">
+              <Link href={slug}>Read more</Link>
+          </button>
+        </CardContent>
+      </div>
+    </Card>
   );
 }

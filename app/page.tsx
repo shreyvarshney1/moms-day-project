@@ -1,70 +1,32 @@
-import ArticleCard from "@/components/article-card"
+import ArticleCard from "@/components/article-card";
+import { mothersDayTributes, Article } from "@/lib/data"; // Import new data and interface
 
-const featuredArticle = {
-  title: "When Is The Best Time of Year To Visit Japan?",
-  excerpt:
-    "Japan is a country of four distinct seasons, each offering unique experiences for travelers. From cherry blossoms in spring to vibrant autumn foliage, the best time to visit depends on what you want to see and do.",
-  slug: "best-time-to-visit-japan",
-}
-
-const articles = [
-  {
-    title: "Japanese City Guide: Exploring Coastal Hotels",
-    excerpt:
-      "Discover the best coastal accommodations Japan has to offer, from luxury resorts to traditional ryokans with ocean views.",
-    slug: "japanese-city-guide-coastal-hotels",
-    category: "Travel",
-  },
-  {
-    title: "Planning a Trip to Japan in the Time of Covid",
-    excerpt:
-      "Essential information for travelers planning to visit Japan during the pandemic, including entry requirements and safety measures.",
-    slug: "japan-trip-covid",
-    category: "Travel",
-  },
-  {
-    title: "How to Choose an Airbnb When I Don't Speak the Local Language",
-    excerpt:
-      "Tips and strategies for booking accommodations in foreign countries when you don't speak the local language.",
-    slug: "airbnb-foreign-language",
-    category: "Travel",
-  },
-]
+// Use the first article as the featured one
+const featuredArticleData: Article | undefined = mothersDayTributes[0];
+// Use the rest for the grid (or all if you prefer)
+const recentArticlesData: Article[] = mothersDayTributes; // Display all including the featured one in the grid
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12 w-3/4">
       <section className="mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="relative aspect-square bg-[#dce4e7] flex items-center justify-center">
-            <span className="text-[#949799]">Image</span>
-          </div>
-          <div className="flex flex-col justify-center">
-            <h1 className="text-3xl font-medium mb-4">When Is The Best Time of Year To Visit Japan?</h1>
-            <div className="flex space-x-2 mb-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-6 h-6 bg-black"></div>
-              ))}
-            </div>
-            <button className="bg-black text-white text-xs px-4 py-2 self-start">Read More</button>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-sm uppercase tracking-wider mb-6">Recent Articles</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {articles.map((article, index) => (
+        <h2 className="text-xl font-semibold mb-6 border-b pb-2">
+          Recent Stories
+        </h2>
+        <div className="flex flex-col">
+          {recentArticlesData.map((article) => (
             <ArticleCard
-              key={index}
+              key={article.id}
               title={article.title}
-              excerpt={article.excerpt}
-              slug={article.slug}
+              description={article.description}
+              readingTime={article.readingTime}
               category={article.category}
+              imageUrl={article.image}
+              slug={article.slug}
             />
           ))}
         </div>
       </section>
     </div>
-  )
+  );
 }
