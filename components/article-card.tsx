@@ -1,7 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Article } from "@/lib/data";
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
+
+// Helper function to truncate text
+const truncateText = (text: string, wordLimit: number): string => {
+  const words = text.split(' ');
+  if (words.length <= wordLimit) {
+    return text;
+  }
+  return words.slice(0, wordLimit).join(' ') + '...';
+};
 
 interface ArticleCardProps {
   title: string
@@ -18,8 +27,10 @@ export default function ArticleCard({
   readingTime,
   category,
   imageUrl,
-  slug
+  slug,
 }: ArticleCardProps) {
+  const truncatedDescription = truncateText(description, 30);
+
   return (
     <Card className="overflow-hidden rounded-none border-0">
       <div className="flex flex-col md:flex-row">
@@ -39,11 +50,14 @@ export default function ArticleCard({
               <span className="text-sm text-gray-500">{readingTime} minutes reading</span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-            <p className="text-gray-600">{description}</p>
+            <p className="text-gray-600">{truncatedDescription}</p>
           </div>
-          <button className="mt-6 bg-black hover:bg-gray-800 text-white">
-              <Link href={slug}>Read more</Link>
-          </button>
+          <Link
+            href={`/articles/${slug}`}
+            className="bg-black px-4 py-2 text-white hover:bg-gray-800"
+          >
+            Read more
+          </Link>
         </CardContent>
       </div>
     </Card>
