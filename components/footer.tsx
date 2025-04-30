@@ -25,8 +25,9 @@ export default function InstagramSection() {
       </div>
       <div className="flex text-center py-4 justify-around">
         <div className="flex justify-center items-start flex-col gap-1">
-
-          <h2 className={`text-xl font-semibold ${cormorant.className}`}>Mother’s Day Tribute</h2>
+          <h2 className={`text-xl font-semibold ${cormorant.className}`}>
+            Mother’s Day Tribute
+          </h2>
           <p className="text-gray-500 text-xs">
             Copyrights © 2025. All Rights Reserved.
           </p>

@@ -1,19 +1,30 @@
-import type React from "react"
-import type { Metadata } from "next"
-import "./globals.css"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import { openSans } from "@/components/fonts"
-import { Open_Sans } from "next/font/google"
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { openSans } from "@/components/fonts";
+import { Open_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mother\'s Day Tribute Blog | Celebrating Moms Everywhere', 
-    template: '%s | Mother\'s Day Tribute Blog',
+    default: "Mother's Day Tribute Blog | Celebrating Moms Everywhere",
+    template: "%s | Mother's Day Tribute Blog",
   },
-  description: 'Discover heartwarming Mother\'s Day tributes, inspiring stories, health tips, and articles celebrating mothers. Explore featured stories, browse categories, and share the love.',
-  keywords: ['Mother\'s Day', 'mom tribute', 'mother stories', 'celebrating moms', 'inspiration for mothers', 'motherhood blog', 'family love', 'parenting articles', 'maternal health'],
-  applicationName: 'Mother\'s Day Tribute Blog',
+  description:
+    "Discover heartwarming Mother's Day tributes, inspiring stories, health tips, and articles celebrating mothers. Explore featured stories, browse categories, and share the love.",
+  keywords: [
+    "Mother's Day",
+    "mom tribute",
+    "mother stories",
+    "celebrating moms",
+    "inspiration for mothers",
+    "motherhood blog",
+    "family love",
+    "parenting articles",
+    "maternal health",
+  ],
+  applicationName: "Mother's Day Tribute Blog",
   // authors: [{ name: 'Your Blog Name or Your Name', url: siteUrl }], // Optional: Add author info
   // creator: 'Your Name or Company', // Optional: Specify the creator
   // publisher: 'Your Blog Name or Publisher', // Optional: Specify the publisher
@@ -83,7 +94,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -93,5 +104,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-  )
+  );
 }

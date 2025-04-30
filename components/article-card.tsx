@@ -3,20 +3,20 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
 const truncateText = (text: string, wordLimit: number): string => {
-  const words = text.split(' ');
+  const words = text.split(" ");
   if (words.length <= wordLimit) {
     return text;
   }
-  return words.slice(0, wordLimit).join(' ') + '...';
+  return words.slice(0, wordLimit).join(" ") + "...";
 };
 
 interface ArticleCardProps {
-  title: string
-  description: string
-  readingTime: number
-  category: string
-  imageUrl: string
-  slug: string
+  title: string;
+  description: string;
+  readingTime: number;
+  category: string;
+  imageUrl: string;
+  slug: string;
 }
 
 export default function ArticleCard({
@@ -44,8 +44,12 @@ export default function ArticleCard({
         <CardContent className="flex flex-col justify-between p-6 md:w-3/5">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <span className="text-sm font-medium text-gray-700">#{category}</span>
-              <span className="text-sm text-gray-500">{readingTime} minutes reading</span>
+              <span className="text-sm font-medium text-gray-700">
+                #{category}
+              </span>
+              <span className="text-sm text-gray-500">
+                {readingTime} minutes reading
+              </span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
             <p className="text-gray-600">{truncatedDescription}</p>

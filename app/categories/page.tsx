@@ -54,7 +54,9 @@ export default function CategoriesPage() {
 
       <div>
         <h2 className="text-xl font-medium mb-6">
-          {selectedCategory ? `Recent Articles in ${selectedCategory}` : "Recent Articles"}
+          {selectedCategory
+            ? `Recent Articles in ${selectedCategory}`
+            : "Recent Articles"}
         </h2>
         {filteredArticles.length > 0 ? (
           <div className="grid grid-cols-1 gap-8">

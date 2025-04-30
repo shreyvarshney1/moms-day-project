@@ -327,8 +327,7 @@ Her voice, soft and lyrical, wove stories of gentle breezes, twinkling stars, an
 
 Those lullabies taught me the power of music to heal and comfort. Even now, when I feel unrest, I recall her melodies, and they bring a sense of peace that transcends time.
 
-This Mother’s Day, I celebrate the melodies of her love—lullabies that continue to echo in my heart, reminding me of home.`
-    ,
+This Mother’s Day, I celebrate the melodies of her love—lullabies that continue to echo in my heart, reminding me of home.`,
     image: "/placeholder.svg",
     category: "Family",
     categorySlug: "family",

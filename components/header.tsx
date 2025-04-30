@@ -113,7 +113,9 @@ export default function Header() {
               <div className="flex-1">
                 <div className="border border-white p-18 text-sm">
                   <h3 className="text-2xl">Newsletter</h3>
-                  <p className={`mb-6 text-gray-300/50 font-extralight ${openSans.className}`}>
+                  <p
+                    className={`mb-6 text-gray-300/50 font-extralight ${openSans.className}`}
+                  >
                     Subscribe to receive daily updates!
                   </p>
                   <div className={`mb-4 ${openSans.className}`}>

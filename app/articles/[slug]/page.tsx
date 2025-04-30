@@ -42,7 +42,7 @@ export default function ArticlePage() {
           <p>{article.description}</p>
         </div>
 
-{/* Related Articles Section (Keep commented if not implemented)
+        {/* Related Articles Section (Keep commented if not implemented)
 
         {article.relatedArticles && article.relatedArticles.length > 0 && (
           <div className="mt-12">
@@ -67,5 +67,5 @@ export default function ArticlePage() {
         )} */}
       </article>
     </div>
-  )
+  );
 }
