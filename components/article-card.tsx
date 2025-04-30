@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
+import { cormorant } from "./fonts";
 
 const truncateText = (text: string, wordLimit: number): string => {
   const words = text.split(" ");
@@ -47,16 +48,20 @@ export default function ArticleCard({
               <span className="text-sm font-medium text-gray-700">
                 #{category}
               </span>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-gray-600/60">
                 {readingTime} minutes reading
               </span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-            <p className="text-gray-600">{truncatedDescription}</p>
+            <h2
+              className={`text-3xl font-bold tracking-tight ${cormorant.className}`}
+            >
+              {title}
+            </h2>
+            <p className="text-gray-600/60">{truncatedDescription}</p>
           </div>
           <Link
             href={`/articles/${slug}`}
-            className="bg-black px-4 py-2 text-white hover:bg-gray-800"
+            className="bg-black p-4 text-center text-white hover:bg-gray-800 w-1/4"
           >
             Read more
           </Link>
