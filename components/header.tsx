@@ -14,23 +14,21 @@ export default function Header() {
     <span className="inline-block w-10 h-0.5 bg-white mr-4"></span>
   );
   return (
-    <header className={cormorant.className}>
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center mb-12">
-          <button
-            aria-label="Close menu"
-            className="p-1"
-            onClick={() => setIsMenuOpen(true)}
-          >
-            <AlignJustify className="h-6 w-6 text-foreground" />
-          </button>
-          <div className="text-center text-xl font-medium">
-            Mother’s Day Tribute Blog
-          </div>
-          <button aria-label="Search" className="p-1">
-            <Search className="h-6 w-6 text-foreground" />
-          </button>
+    <header className={`container mx-auto px-4 py-4 ${cormorant.className}`}>
+      <div className="flex justify-between items-center">
+        <button
+          aria-label="Close menu"
+          className="p-1"
+          onClick={() => setIsMenuOpen(true)}
+        >
+          <AlignJustify className="h-6 w-6 text-foreground" />
+        </button>
+        <div className="text-center text-xl font-medium">
+          Mother’s Day Tribute Blog
         </div>
+        <button aria-label="Search" className="p-1">
+          <Search className="h-6 w-6 text-foreground" />
+        </button>
       </div>
 
       {isMenuOpen && (

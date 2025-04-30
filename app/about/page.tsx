@@ -5,7 +5,6 @@ import { cormorant } from "@/components/fonts";
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-8 w-3/4">
-      {/* Top Section */}
       <div className="flex flex-col items-center text-center mb-12">
         <div className="w-48 h-48 bg-gray-200 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
           <Image
@@ -64,7 +63,6 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* Image Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <div className="w-full h-80 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
           <Image
@@ -85,8 +83,7 @@ export default function AboutPage() {
           />
         </div>
       </div>
-
-      {/* Developer Insights Section */}
+      
       <div className="max-w-3xl mx-auto mb-12 text-gray-700 leading-relaxed">
         <p className="mb-4">
           Whether you're just starting out or looking to level up, here are some
