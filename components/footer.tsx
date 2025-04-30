@@ -33,10 +33,10 @@ export default function InstagramSection() {
           </p>
         </div>
         <div className="flex justify-center mt-4 space-x-6 text-gray-500 text-sm">
-          <a href="#">Home</a>
-          <a href="#">About me</a>
-          <a href="#">Categories</a>
-          <a href="#">Contact</a>
+          <a href="/">Home</a>
+          <a href="/about">About me</a>
+          <a href="/categories">Categories</a>
+          <a href="/contact">Contact</a>
         </div>
       </div>
     </footer>
