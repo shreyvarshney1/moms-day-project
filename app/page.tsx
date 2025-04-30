@@ -1,5 +1,6 @@
 import ArticleCard from "@/components/article-card";
 import { cormorant } from "@/components/fonts";
+import HeroSection from "@/components/hero";
 import { mothersDayTributes, Article } from "@/lib/data";
 
 const featuredArticleData: Article | undefined = mothersDayTributes[0];
@@ -7,8 +8,9 @@ const recentArticlesData: Article[] = mothersDayTributes;
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-12 w-3/4">
-      <section className="mb-16">
+    <div className="container ">
+      <HeroSection />
+      <section className="mx-auto p-12 w-3/4 bg-white mt-[50vh]">
         <h2
           className={`text-2xl font-semibold mb-6 border-b pb-2 ${cormorant.className}`}
         >

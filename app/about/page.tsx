@@ -1,20 +1,13 @@
 import Image from "next/image";
 import { Facebook, Instagram, Youtube, Rss } from "lucide-react";
 import { cormorant } from "@/components/fonts";
+import HeroSection from "@/components/hero";
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-8 w-3/4">
-      <div className="flex flex-col items-center text-center mb-12">
-        <div className="w-48 h-48 bg-gray-200 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-          <Image
-            src="/placeholder.svg"
-            alt="Profile"
-            width={192}
-            height={192}
-            className="opacity-50 object-cover"
-          />
-        </div>
+    <div className="container">
+      <HeroSection />
+      <div className="flex flex-col items-center text-center mx-auto px-4 py-8 w-3/4 bg-white mt-[50vh]">
         <div className={cormorant.className}>
           <h1 className="text-4xl mb-2">My name is</h1>
           <h2 className="text-5xl font-bold mb-4">Shrey Varshney</h2>
@@ -61,29 +54,28 @@ export default function AboutPage() {
           of 29,120 in Biweekly Contest 148. I'm currently exploring AI-assisted
           stock analysis tools using React, TypeScript, and Next.js.
         </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+          <div className="w-full h-80 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
+            <Image
+              src="/placeholder.svg"
+              alt="Project Preview 1"
+              width={300}
+              height={300}
+              className="opacity-50"
+            />
+          </div>
+          <div className="w-full h-80 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
+            <Image
+              src="/placeholder.svg"
+              alt="Project Preview 2"
+              width={300}
+              height={300}
+              className="opacity-50"
+            />
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="w-full h-80 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
-          <Image
-            src="/placeholder.svg"
-            alt="Project Preview 1"
-            width={300}
-            height={300}
-            className="opacity-50"
-          />
-        </div>
-        <div className="w-full h-80 bg-gray-200 flex items-center justify-center overflow-hidden rounded-lg">
-          <Image
-            src="/placeholder.svg"
-            alt="Project Preview 2"
-            width={300}
-            height={300}
-            className="opacity-50"
-          />
-        </div>
-      </div>
-      
       <div className="max-w-3xl mx-auto mb-12 text-gray-700 leading-relaxed">
         <p className="mb-4">
           Whether you're just starting out or looking to level up, here are some
