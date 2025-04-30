@@ -1,4 +1,3 @@
-// components/InstagramSection.tsx
 import Image from "next/image";
 import { FaInstagram, FaHeart, FaComment } from "react-icons/fa";
 import placeholder from "@/public/placeholder.svg";

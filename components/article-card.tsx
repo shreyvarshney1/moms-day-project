@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Article } from "@/lib/data";
 import { Card, CardContent } from "@/components/ui/card";
 
-// Helper function to truncate text
 const truncateText = (text: string, wordLimit: number): string => {
   const words = text.split(' ');
   if (words.length <= wordLimit) {

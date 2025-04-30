@@ -1,17 +1,15 @@
 import ArticleCard from "@/components/article-card";
-import { mothersDayTributes, Article } from "@/lib/data"; // Import new data and interface
+import { mothersDayTributes, Article } from "@/lib/data";
 
-// Use the first article as the featured one
 const featuredArticleData: Article | undefined = mothersDayTributes[0];
-// Use the rest for the grid (or all if you prefer)
-const recentArticlesData: Article[] = mothersDayTributes; // Display all including the featured one in the grid
+const recentArticlesData: Article[] = mothersDayTributes;
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12 w-3/4">
       <section className="mb-16">
         <h2 className="text-xl font-semibold mb-6 border-b pb-2">
-          Recent Stories
+          Recent Articles
         </h2>
         <div className="flex flex-col">
           {recentArticlesData.map((article) => (

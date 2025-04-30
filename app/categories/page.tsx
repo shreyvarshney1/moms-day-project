@@ -1,11 +1,9 @@
-"use client"; // Required for using useState
+"use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { mothersDayTributes, Article } from "@/lib/data";
-import ArticleCard from "@/components/article-card"; // Import the ArticleCard component
+import ArticleCard from "@/components/article-card";
 
-// Derive unique categories from the articles
 const uniqueCategories = Array.from(
   new Set(mothersDayTributes.map((article) => article.category))
 ).map((category) => ({
@@ -18,21 +16,19 @@ const uniqueCategories = Array.from(
 export default function CategoriesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Filter articles based on the selected category
   const filteredArticles = selectedCategory
     ? mothersDayTributes.filter(
         (article) => article.category === selectedCategory
       )
-    : mothersDayTributes; // Show all if no category is selected
+    : mothersDayTributes;
 
   return (
     <div className="container mx-auto px-4 py-12 w-3/4">
       <h1 className="text-2xl font-medium mb-8">Explore by Category</h1>
 
-      {/* Category Selection Buttons */}
       <div className="flex flex-wrap gap-4 mb-12">
         <button
-          onClick={() => setSelectedCategory(null)} // Set to null to show all
+          onClick={() => setSelectedCategory(null)}
           className={`border px-4 py-2 text-sm transition-colors ${
             selectedCategory === null
               ? "bg-black text-white border-black"
@@ -56,7 +52,6 @@ export default function CategoriesPage() {
         ))}
       </div>
 
-      {/* Recent Articles Section */}
       <div>
         <h2 className="text-xl font-medium mb-6">
           {selectedCategory ? `Recent Articles in ${selectedCategory}` : "Recent Articles"}
