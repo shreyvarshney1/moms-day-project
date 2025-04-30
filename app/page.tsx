@@ -8,7 +8,7 @@ const recentArticlesData: Article[] = mothersDayTributes;
 
 export default function Home() {
   return (
-    <div className="container ">
+    <div className="container">
       <HeroSection />
       <section className="mx-auto p-12 w-3/4 bg-white mt-[50vh]">
         <h2

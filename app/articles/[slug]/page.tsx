@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound, useParams } from "next/navigation";
 import { mothersDayTributes } from "@/lib/data";
+import HeroSection from "@/components/hero";
 
 export default function ArticlePage() {
   const params = useParams<{ slug: string }>();
@@ -13,13 +14,11 @@ export default function ArticlePage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <article className="max-w-3xl mx-auto">
+    <div className="container">
+      <HeroSection />
+      <article className="mx-auto p-12 w-3/4 bg-white mt-[50vh]">
         <div className="mb-4 text-sm text-gray-500">
-          <Link
-            href={`/categories/${article.categorySlug}`}
-            className="hover:underline"
-          >
+          <Link href={`/categories`} className="hover:underline">
             #{article.category}
           </Link>
           <span className="mx-2">•</span>
